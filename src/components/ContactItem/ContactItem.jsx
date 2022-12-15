@@ -2,11 +2,15 @@ import PropTypes from 'prop-types';
 import { Contact, Button } from './ContactItem.styled';
 import { deleteContact } from 'redux/operations';
 import { useDispatch } from 'react-redux';
+import { Notify } from 'notiflix';
 
 export const ContactItem = ({ name, phone, id }) => {
   const dispatch = useDispatch();
 
-  const handleDelete = () => dispatch(deleteContact(id));
+  const handleDelete = () => {
+    dispatch(deleteContact(id));
+    Notify.info(`Contact ${name} deleted`);
+  };
 
   return (
     <Contact>

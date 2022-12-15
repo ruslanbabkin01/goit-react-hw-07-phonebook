@@ -28,10 +28,14 @@ export const ContactForm = () => {
       contact => contact.name.toLowerCase() === currentName.toLowerCase()
     );
 
-    matchName
-      ? Notify.info(`${name} is already in contacts`)
-      : dispatch(addContact({ ...newContact }));
+    if (matchName) {
+      Notify.info(`${name} is already in contacts`);
+      form.reset();
+      return;
+    }
 
+    dispatch(addContact({ ...newContact }));
+    Notify.info(`Contact ${name} added`);
     form.reset();
   };
 
