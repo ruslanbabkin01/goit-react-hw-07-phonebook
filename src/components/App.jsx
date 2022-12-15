@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
 import { selectIsLoading, selectError } from 'redux/selectors';
-import { parseJSON } from 'date-fns';
+// import { parseJSON } from 'date-fns';
 
 export const App = () => {
   const dispatch = useDispatch();
