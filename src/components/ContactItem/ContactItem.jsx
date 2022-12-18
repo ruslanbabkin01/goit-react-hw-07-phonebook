@@ -16,8 +16,8 @@ export const ContactItem = ({ name, phone, id, date }) => {
 
   return (
     <Contact>
-      {newDate} <br />
-      {name} : {phone}
+      {name} : {phone} <br />
+      {newDate}
       <Button type="button" id={id} onClick={handleDelete}>
         Delete
       </Button>
