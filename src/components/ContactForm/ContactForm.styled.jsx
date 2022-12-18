@@ -7,11 +7,16 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
+  margin-right: 10px;
   display: block;
   font-size: 20px;
   & + & {
     margin-top: 12px;
   }
+`;
+
+export const InputForm = styled.input`
+  margin-left: 10px;
 `;
 
 export const BtnAdd = styled.button`

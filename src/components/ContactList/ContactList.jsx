@@ -9,8 +9,14 @@ export const ContactList = () => {
 
   return (
     <Contacts>
-      {contacts.map(({ phone, name, id }) => (
-        <ContactItem key={id} phone={phone} name={name} id={id} />
+      {contacts.map(({ phone, name, id, createdAt }) => (
+        <ContactItem
+          key={id}
+          phone={phone}
+          name={name}
+          id={id}
+          date={createdAt}
+        />
       ))}
       <TotalContacts>Total contacts: {totalContacts}</TotalContacts>
     </Contacts>

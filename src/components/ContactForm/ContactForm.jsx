@@ -1,6 +1,6 @@
 import { Notify } from 'notiflix';
 import { nanoid } from 'nanoid';
-import { Form, Label, BtnAdd } from './ContactForm.styled';
+import { Form, Label, BtnAdd, InputForm } from './ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from '../../redux/operations';
@@ -43,7 +43,7 @@ export const ContactForm = () => {
     <Form onSubmit={handleSubmit}>
       <Label htmlFor={nameInputId}>
         Name
-        <input
+        <InputForm
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -54,7 +54,7 @@ export const ContactForm = () => {
       </Label>
       <Label htmlFor={numberInputId}>
         Number
-        <input
+        <InputForm
           type="tel"
           name="phone"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
