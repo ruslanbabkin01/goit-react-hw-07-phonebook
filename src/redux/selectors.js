@@ -13,6 +13,7 @@ export const selectFilter = state => state.filter.filterValue;
 export const selectVisibleContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filter) => {
+    console.log('aa');
     const visibleContacts = contacts.filter(({ name }) =>
       name.toLowerCase().includes(filter.toLowerCase().trim())
     );
